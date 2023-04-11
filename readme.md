@@ -76,7 +76,7 @@ The Results of running the "PA_Shfl_w[7,2]_1.0_40D_Misclassification_Cost_Matrix
 So for those 30 runs, 9 was misclassified as a 4 the most, with an average of 16 times, per run.   For example on Run 30, training concluded at Epoch 22, and the number of times 9 was misclassified as a 4 was '23'.  The number of times 9 was classified correctly as a 9 was 951.   On Run  0, training concluded at Epoch 17, and 9 was misclassified as a 4, 11 times, and 9 was correctly classified as a 9 958 times.  Run 0 also has 4s misclassified as a 9, 14 times.  So technically in Run 0, after training, the number of misclassifications for 9s as 4s was lower than another misclassification.  Still on average, 9s were mislassified the most.  
 
 
-### Choosing to `Try to Control 9T-4P'
+### Choosing to `Try to Control 9T-4P' with Lambda
 
 Since we found the highest average number of misclassifications using our 'lousy neural network' was 9_4, we launch into a new set of "PreExperiments" with Lambda using the Phil-Alton code (PA) to try to control it with different weights on the cost matrix.     At this point I have a lot of files named PA_Shfl_... but I choose to focus on just the ones that also have a 40D to signify the 'lousy neural network' to make sure I'm comparing apples with apples.  Of note, it looks like I still was using the original Train/Test Split, not a validation split yet.
 
@@ -97,3 +97,5 @@ Since we found the highest average number of misclassifications using our 'lousy
 - - Average: 0.0
 
  
+# Choosing to `Try to Control 9T-4P' with Multiple Lambdas and Epochs
+By March 10, I had created the file, [PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb](https://github.com/RachelRamirez/misclassification_matrix/blob/main/PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb)
