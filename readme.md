@@ -18,7 +18,7 @@ However I started to see counterintuitive results, where 7 out of 30 runs the mi
 
 This code seems mostly correct.
 
-### PA_Shfl_w[7,2]_1.0_40D_Misclassification_Cost_Matrix_Example.ipynb
+#### Developing a Baseline PA_Shfl_w[7,2]_1.0_40D_Misclassification_Cost_Matrix_Example.ipynb
 
 With this file i redux the neural network model with two-layers of 40 Dense Connections and two dropout between.  I gave the misclassification weights all 1's, so this file serves as a Baseline.   Importantly up to this point I had been using the Default MNIST Train/Test Set split, and used the Test Set directly as my Validation set.  At this point I had the following hyperparameters/code:
 
@@ -99,3 +99,5 @@ Since we found the highest average number of misclassifications using our 'lousy
  
 # Choosing to `Try to Control 9T-4P' with Multiple Lambdas and Epochs
 By March 10, I had created the file, [PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb](https://github.com/RachelRamirez/misclassification_matrix/blob/main/PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb)
+
+This was to test out different lambda values and different epoch-periods.
