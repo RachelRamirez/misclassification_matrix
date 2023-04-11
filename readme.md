@@ -60,7 +60,7 @@ def PA_method(cost_matrix):
 The Results of running the "PA_Shfl_w[7,2]_1.0_40D_Misclassification_Cost_Matrix_Example.ipynb" 30 times (within a for-loop, not restarting the console 30 times) were the greatest number of misclassifications were:
 
 
-| Actual | Prediction | Misclassified # of Times | Percentage of Times |
+| Actual | Prediction | Avg Misclassified # of Times | Avg Percentage of Times |
 | ------ | ---------- | ------------------------ | ------------------- |
 | 9      | 4          | 16.466                   | 1.67 %              |
 | 4      | 9          | 15.7                     | 1.55 %              |
