@@ -97,7 +97,11 @@ Since we found the highest average number of misclassifications using our 'lousy
 - - Average: 0.0
 
  
-# Choosing to `Try to Control 9T-4P' with Multiple Lambdas and Epochs
+#### Choosing to `Try to Control 9T-4P' with Multiple Lambdas and Epochs
 By March 10, I had created the file, [PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb](https://github.com/RachelRamirez/misclassification_matrix/blob/main/PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb)
 
 This was to test out different lambda values and different epoch-periods.
+
+From what we knew about previous results using just different lambda values, it seemed like using a weight of 1, 100, and 1000 respectively required {~25} {~15*} {~45 epochs with early stopping} when given 45 epochs and a patience of 10 for early stopping (*30 epochs and patience of 3).  So we decided to split this period up into **Three Phases** Training Phase 1: 5 Epochs, Training Phase 2: 5 Epochs, Training Phase 3: 25 Epochs with Early Stopping. and Patience of 10.
+
+
