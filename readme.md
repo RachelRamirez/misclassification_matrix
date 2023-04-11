@@ -105,3 +105,33 @@ This was to test out different lambda values and different epoch-periods.
 From what we knew about previous results using just different lambda values, it seemed like using a weight of 1, 100, and 1000 respectively required {~25} {~15*} {~45 epochs with early stopping} when given 45 epochs and a patience of 10 for early stopping (*30 epochs and patience of 3).  So we decided to split this period up into **Three Phases** Training Phase 1: 5 Epochs, Training Phase 2: 5 Epochs, Training Phase 3: 25 Epochs with Early Stopping. and Patience of 10.
 
 
+
+Label | Init | Mid | Late 
+--- | --- | --- | --- 
+1--1--1 | 1 | 1 | 1 
+2--2--1 | 1 | 1 | 100 
+3--3--1 | 1 | 1 | 1000 
+4--4--1 | 1 | 100 | 1 
+5--5--1 | 1 | 100 | 100 
+6--6--1 | 1 | 100 | 1000 
+7--7--1 | 1 | 1000 | 1 
+8--8--1 | 1 | 1000 | 100 
+9--9--1 | 1 | 1000 | 1000 
+10--10--1 | 100 | 1 | 1 
+11--11--1 | 100 | 1 | 100 
+12--12--1 | 100 | 1 | 1000 
+13--13--1 | 100 | 100 | 1 
+14--14--1 | 100 | 100 | 100 
+15--15--1 | 100 | 100 | 1000 
+16--16--1 | 100 | 1000 | 1 
+17--17--1 | 100 | 1000 | 100 
+18--18--1 | 100 | 1000 | 1000 
+19--19--1 | 1000 | 1 | 1 
+20--20--1 | 1000 | 1 | 100 
+21--21--1 | 1000 | 1 | 1000 
+22--22--1 | 1000 | 100 | 1 
+23--23--1 | 1000 | 100 | 100 
+24--24--1 | 1000 | 100 | 1000 
+25--25--1 | 1000 | 1000 | 1 
+26--26--1 | 1000 | 1000 | 100 
+27--27--1 | 1000 | 1000 | 1000
