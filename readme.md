@@ -57,7 +57,7 @@ def PA_method(cost_matrix):
   return cm3
 ```
 
-The Results of running the "PA_Shfl_w[7,2]_1.0_40D_Misclassification_Cost_Matrix_Example.ipynb" 30 times (within a for-loop, not restarting the console 30 times) were the greatest number of misclassifications were:
+The Results of running the "PA_Shfl_w[7,2]_1.0_40D_Misclassification_Cost_Matrix_Example.ipynb" 30 times (within a for-loop, not restarting the console 30 times) , the greatest number of misclassifications were:
 
 
 | Actual | Prediction | Avg Misclassified # of Times | Avg Percentage of Times |
@@ -68,3 +68,4 @@ The Results of running the "PA_Shfl_w[7,2]_1.0_40D_Misclassification_Cost_Matrix
 
 
 
+So for those 30 runs, 9 was misclassified as a 4 the most, with an average of 16 times, per run.   For example on Run 30, training concluded at Epoch 22, and the number of times 9 was misclassified as a 4 was '23'.  The number of times 9 was classified correctly as a 9 was 951.   On Run  0, training concluded at Epoch 17, and 9 was misclassified as a 4 11 times, and 9 was correctly classified as a 9 958 times.  Run 0 also has 4s misclassified as a 9, 14 times.  So technically in Run 0, after training, the number of misclassifications for 9s as 4s was lower than another misclassification.  Still on average, 9s were mislassified the most.  
