@@ -72,11 +72,16 @@ So for those 30 runs, 9 was misclassified as a 4 the most, with an average of 16
 
 
 ### Choosing to `Try to Control 9T-4P'
-Since we found the highest average number of misclassifications using our 'lousy neural network' was 9_4, we launch into a new set of "PreExperiments" with Lambda using the Phil-Alton code (PA) to try to control it with different weights on the cost matrix.  We also go back and make a validation set (at least by March 10th I had done that and had 7500 validation samples, and 2500 test samples as a holdout set).   At this point I have a lot of files named PA_Shfl_... but I choose to focus on just the ones that also have a 40D to signify the 'lousy neural network' to make sure I'm comparing apples with apples.
+
+Since we found the highest average number of misclassifications using our 'lousy neural network' was 9_4, we launch into a new set of "PreExperiments" with Lambda using the Phil-Alton code (PA) to try to control it with different weights on the cost matrix.     At this point I have a lot of files named PA_Shfl_... but I choose to focus on just the ones that also have a 40D to signify the 'lousy neural network' to make sure I'm comparing apples with apples.  Of note, it looks like I still was using the original Train/Test Split, not a validation split yet.
 
 
 - PA_Shfl_w[9,4]_1_40D_Misclassification_Cost_Matrix_Example.ipynb
+
 - PA_Shfl_w[7,2]_1.0_40D_Misclassification_Cost_Matrix_Example.ipynb
+
 - PA_Shfl_w[9,4]_2.0_40D_Misclassification_Cost_Matrix_Example.ipynb
-- PA_Shfl_w[9,4]_10.0_40D_Misclassification_Cost_Matrix_Example.ipynb
+
+- PA_Shfl_w[9,4]_10.0_40D_Misclassification_Cost_Matrix_Example.ipynb (Mislabelled, actually was 100, not 10)
+
 - PA_Shfl_w[9,4]_1000_40D_Misclassification_Cost_Matrix_Example.ipynb 
