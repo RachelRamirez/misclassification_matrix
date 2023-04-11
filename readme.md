@@ -15,4 +15,46 @@ This code seems mostly correct.
 
 ### PA_Shfl_w[7,2]_1.0_40D_Misclassification_Cost_Matrix_Example.ipynb
 
-With this file i redux the model to only 40 Dense Connections.  I gave the misclassification weights all 1's, so this file serves as a Baseline.  Running the file 30 times (within a for-loop, not restarting the file 30 times), using got the following results
+With this file i redux the neural network model with two-layers of 40 Dense Connections and two dropout between.  I gave the misclassification weights all 1's, so this file serves as a Baseline.   Importantly up to this point I had been using the Default MNIST Train/Test Set split, and used the Test Set directly as my Validation set.  At this point I had the following hyperparameters/code:
+
+```
+batch size: 256
+number of epochs: 30
+early patience: 3 on validation loss 
+
+model:
+def PA_method(cost_matrix):
+  model3 = Sequential()
+  model3.add(Dense(40, input_shape=(784,), kernel_initializer=tf.keras.initializers.glorot_uniform(seed=42)))
+  model3.add(Activation('relu'))
+  model3.add(Dropout(0.2))
+  model3.add(Dense(40, kernel_initializer=tf.keras.initializers.glorot_uniform(seed=42)))
+  model3.add(Activation('relu'))
+  model3.add(Dropout(0.2))
+  model3.add(Dense(10,kernel_initializer=tf.keras.initializers.glorot_uniform(seed=42)))
+  model3.add(Activation('softmax'))
+
+  rms = RMSprop()
+
+  model3.compile(loss=WeightedCategoricalCrossentropy(cost_matrix), optimizer=rms,  metrics='categorical_accuracy',)
+  callback = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=3)
+
+  model3_history = model3.fit(X_train, Y_train,
+            batch_size=batch_size, epochs=nb_epoch, verbose=2,
+            validation_data=(X_test, Y_test), shuffle=True, use_multiprocessing=True
+            ,callbacks = [callback]
+            )
+
+ 
+
+  #Predict
+  y_prediction = model3.predict(X_test)
+  y_prediction  = np.argmax(y_prediction, axis=1)
+  
+  #Confusion Matrix
+  cm3 = confusion_matrix(y_test, y_prediction)
+  cm3 = pd.DataFrame(cm3, range(10),range(10))
+  return cm3
+```
+
+
