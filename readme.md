@@ -119,15 +119,22 @@ If i use acceleration/momentum/learning rate it might be harder to effect the we
 
 ### PreExperimentation Part 2: Choosing to 'Try to Control 9T-4P' with Multiple Lambdas over THREE Training Phases
 
-By March 10, I had created the file, [PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb](https://github.com/RachelRamirez/misclassification_matrix/blob/main/PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb)
+By March 10, I had created the file, [PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb](https://github.com/RachelRamirez/misclassification_matrix/blob/main/PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb) and importantly I at least have evidence of splitting the train set into a validation set so that there are:
 
-This was to test out different lambda values and different epoch-periods.
+- 60000 train samples
+- 7500 validation samples
+- 2500 test samples
+
+As for exact data splits, each category is represented  between 8% and 11% per each of the splits.
+
+
+The file "PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb"  was to test out Three Different Lambda values and different epoch-periods.
 
 From what we knew about previous results using just different lambda values, it seemed like using a weight of 1, 100, and 1000 respectively required {~25} {~15*} {~45 epochs with early stopping} when given 45 epochs and a patience of 10 for early stopping (*30 epochs and patience of 3).  So we decided to split this period up into **Three Phases** Training Phase 1: 5 Epochs, Training Phase 2: 5 Epochs, Training Phase 3: 25 Epochs with Early Stopping. and Patience of 0.
 
  
 **Table of  Misclassifications with Different Lambda-Combos**
-
+The below graphic shows 27 unique combinations of the three-phases and three-lambda values 3^3, and the associated misclassifications.
 <img src = "https://user-images.githubusercontent.com/13596380/231316234-047d6483-cfd2-4f11-bad6-34ed64688bdc.png" alt="Table of Values" width="50%" title="Table of Misclass Values for Different Lambda Values">
 
 
@@ -137,3 +144,8 @@ From what we knew about previous results using just different lambda values, it 
 
 However at this point, it looks like only the initial-phase does anything to effect the Misclassifications 9t_4P.  But plotting the other second phase values does seem to show more variability in 4T_9P then was seen with just static lambda values:
 ![image](https://user-images.githubusercontent.com/13596380/231481503-e51cf4a7-403d-4b20-b3bc-dcd789a508b1.png)
+
+
+Summary:
+After running 27 unique combinations of three lambda values across different values, it was clear that only the initial phase (first five epochs) seemed to be the most important factor.  The second and third phase didn't seem to have as large of an effect, if any.  Dr Cs guidance at this point was to explore more lambda-values in the first-five-epochs.  
+
