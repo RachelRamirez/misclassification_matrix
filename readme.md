@@ -96,6 +96,12 @@ Since we found the highest average number of misclassifications using our 'lousy
 - PA_Shfl_w[9,4]_1000_40D_Misclassification_Cost_Matrix_Example.ipynb 
 - - Average: 0.0
 
+![Graph Builder - Weights 1 10 1000 1000 - Misclass 9T_4P vs logX - Predicted Equation -](https://user-images.githubusercontent.com/13596380/231467943-74e19f49-73a9-4a9e-8e66-ee597a979db7.png)
+
+
+
+
+
  
 #### Choosing to `Try to Control 9T-4P' with Multiple Lambdas and Epochs
 By March 10, I had created the file, [PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb](https://github.com/RachelRamirez/misclassification_matrix/blob/main/PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb)
