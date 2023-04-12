@@ -138,4 +138,4 @@ Init | Mid | Late
 ![Tabulate_3_Phase_Combos_Summary_of_Misclasses](https://user-images.githubusercontent.com/13596380/231316234-047d6483-cfd2-4f11-bad6-34ed64688bdc.png)
 
 Here's a graph of the data above.  
-![download](https://user-images.githubusercontent.com/13596380/231318822-c2cde056-2df1-4818-b4d8-cfe294b5abab.png)
+ ![download](https://user-images.githubusercontent.com/13596380/231319006-58ce6b1c-cf71-40b2-a41a-4bfc68bdf4c8.png)
