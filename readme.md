@@ -96,6 +96,7 @@ Since we found the highest average number of misclassifications using our 'lousy
 - PA_Shfl_w[9,4]_1000_40D_Misclassification_Cost_Matrix_Example.ipynb 
 - - Average: 0.0
 
+
 ![Graph Builder - Weights 1 10 1000 1000 - Misclass 9T_4P vs logX - Predicted Equation -](https://user-images.githubusercontent.com/13596380/231467943-74e19f49-73a9-4a9e-8e66-ee597a979db7.png)
 
 The above graph is of points X =  1, 2, 10, 100, 1000, and shows a decreasing linear relationship between misclasses of 9T_4P with a log(X), with a lot of variability. 
@@ -110,6 +111,7 @@ If i use acceleration/momentum/learning rate it might be harder to effect the we
 
  
 #### Choosing to `Try to Control 9T-4P' with Multiple Lambdas and Epochs
+
 By March 10, I had created the file, [PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb](https://github.com/RachelRamirez/misclassification_matrix/blob/main/PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_Lambda3.ipynb)
 
 This was to test out different lambda values and different epoch-periods.
@@ -119,10 +121,13 @@ From what we knew about previous results using just different lambda values, it 
  
 
 
-<img src = "https://user-images.githubusercontent.com/13596380/231316234-047d6483-cfd2-4f11-bad6-34ed64688bdc.png" alt="Table of Values" width="50%" title="Table of Misclass Values for Different Lambda Values>
+<img src = "https://user-images.githubusercontent.com/13596380/231316234-047d6483-cfd2-4f11-bad6-34ed64688bdc.png" alt="Table of Values" width="50%" title="Table of Misclass Values for Different Lambda Values">
  
+ Test1
  
 <img src = 
 "https://user-images.githubusercontent.com/13596380/231319406-9ae3be38-18df-4db9-bb32-813db7ed1d43.png" alt="Colored First Phase Image" width="70%" height="70%" title="Image Title">
+
+Test2
 
 However at this point, it looks like only the initial-phase does anything.  ![image](https://user-images.githubusercontent.com/13596380/231481503-e51cf4a7-403d-4b20-b3bc-dcd789a508b1.png)
