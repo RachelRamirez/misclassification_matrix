@@ -67,7 +67,7 @@ The Results of running the "PA_Shfl_w[7,2]_1.0_40D_Misclassification_Cost_Matrix
 
 | Actual | Prediction | Avg Misclassified # of Times | Avg Percentage of Times |
 | ------ | ---------- | ------------------------ | ------------------- |
-| 9      | 4          | 16.466                   | 1.67 %              |
+|** 9**      |** 4**          | 16.466                   | 1.67 %              |  <-- Chosen Baseline
 | 4      | 9          | 15.7                     | 1.55 %              |
 | 7      | 2          | 12.4                     | 1.20 %              |
 
