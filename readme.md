@@ -1,6 +1,6 @@
 # Readme
 
-#### Tinkering
+## Tinkering
 
 **The first effort was [Reproducibility file]**(https://github.com/RachelRamirez/misclassification_matrix/blob/main/Reproducible_Misclassification_Cost_Matrix_Example.ipynb) 
 
@@ -19,6 +19,8 @@ However I started to see counterintuitive results, where 7 out of 30 runs the mi
 After discovering the error, around 2/21/2023 I started experimenting with PA Code
 
 This code seems mostly correct.
+
+
 
 ## PRE-EXPERIMENTS
 
