@@ -98,8 +98,14 @@ Since we found the highest average number of misclassifications using our 'lousy
 
 ![Graph Builder - Weights 1 10 1000 1000 - Misclass 9T_4P vs logX - Predicted Equation -](https://user-images.githubusercontent.com/13596380/231467943-74e19f49-73a9-4a9e-8e66-ee597a979db7.png)
 
+The above graph is of points X =  1, 2, 10, 100, 1000, and shows a decreasing linear relationship between misclasses of 9T_4P with a log(X), with a lot of variability. 
 
 
+![image](https://user-images.githubusercontent.com/13596380/231473383-5e53db85-25c7-43b9-b13a-517b64575ec4.png)
+
+The above three sub-graphs show different relationships between the number of misclassifications and the accuracy.  We can see that with one-lambda value we can lower the misclassifications at some cost to overall accuracy.   What I may have needed to do here, is show more Training/Testing Loss and Accuracy Graphs lumped together to see how the Lambda Values effect the overall Training/Testing Loss and Accuracy Cycle.  
+
+If i use acceleration/momentum/learning rate it might be harder to effect the weights of the model later on.  
 
 
  
@@ -129,3 +135,6 @@ Init | Mid | Late
 ![Tabulate_3_Phase_Combos_Summary_of_Misclasses](https://user-images.githubusercontent.com/13596380/231316234-047d6483-cfd2-4f11-bad6-34ed64688bdc.png)
  
 ![image](https://user-images.githubusercontent.com/13596380/231319406-9ae3be38-18df-4db9-bb32-813db7ed1d43.png)
+
+
+However at this point, it looks like only the initial-phase does anything.  ![image](https://user-images.githubusercontent.com/13596380/231481503-e51cf4a7-403d-4b20-b3bc-dcd789a508b1.png)
