@@ -130,4 +130,5 @@ From what we knew about previous results using just different lambda values, it 
 
 Test2
 
-However at this point, it looks like only the initial-phase does anything.  ![image](https://user-images.githubusercontent.com/13596380/231481503-e51cf4a7-403d-4b20-b3bc-dcd789a508b1.png)
+However at this point, it looks like only the initial-phase does anything to effect the Misclassifications 9t_4P.  But plotting the other second phase values does seem to show more variability in 4T_9P then was seen with just static lambda values:
+![image](https://user-images.githubusercontent.com/13596380/231481503-e51cf4a7-403d-4b20-b3bc-dcd789a508b1.png)
