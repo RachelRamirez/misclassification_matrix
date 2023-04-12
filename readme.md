@@ -115,27 +115,10 @@ Init | Mid | Late
 1 | 1000 | 1 
 1 | 1000 | 100 
 1 | 1000 | 1000 
-100 | 1 | 1 
-100 | 1 | 100 
-100 | 1 | 1000 
-100 | 100 | 1 
-100 | 100 | 100 
-100 | 100 | 1000 
-100 | 1000 | 1 
-100 | 1000 | 100 
-100 | 1000 | 1000 
-1000 | 1 | 1 
-1000 | 1 | 100 
-1000 | 1 | 1000 
-1000 | 100 | 1 
-1000 | 100 | 100 
-1000 | 100 | 1000 
-1000 | 1000 | 1 
-1000 | 1000 | 100 
+100 | 1 | 1   
+.... | |
 1000 | 1000 | 1000
 
 
 ![Tabulate_3_Phase_Combos_Summary_of_Misclasses](https://user-images.githubusercontent.com/13596380/231316234-047d6483-cfd2-4f11-bad6-34ed64688bdc.png)
-
-Here's a graph of the data above.  
- ![download](https://user-images.githubusercontent.com/13596380/231319006-58ce6b1c-cf71-40b2-a41a-4bfc68bdf4c8.png)
+ 
