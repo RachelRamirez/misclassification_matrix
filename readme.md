@@ -116,25 +116,13 @@ This was to test out different lambda values and different epoch-periods.
 
 From what we knew about previous results using just different lambda values, it seemed like using a weight of 1, 100, and 1000 respectively required {~25} {~15*} {~45 epochs with early stopping} when given 45 epochs and a patience of 10 for early stopping (*30 epochs and patience of 3).  So we decided to split this period up into **Three Phases** Training Phase 1: 5 Epochs, Training Phase 2: 5 Epochs, Training Phase 3: 25 Epochs with Early Stopping. and Patience of 0.
 
-Init | Mid | Late 
---- | --- | --- 
-1 | 1 | 1 
-1 | 1 | 100 
-1 | 1 | 1000 
-1 | 100 | 1 
-1 | 100 | 100 
-1 | 100 | 1000 
-1 | 1000 | 1 
-1 | 1000 | 100 
-1 | 1000 | 1000 
-100 | 1 | 1   
-.... | |
-1000 | 1000 | 1000
+ 
 
 
-![Tabulate_3_Phase_Combos_Summary_of_Misclasses](https://user-images.githubusercontent.com/13596380/231316234-047d6483-cfd2-4f11-bad6-34ed64688bdc.png)
+<img src = "https://user-images.githubusercontent.com/13596380/231316234-047d6483-cfd2-4f11-bad6-34ed64688bdc.png" alt="Table of Values" width="50%" title="Table of Misclass Values for Different Lambda Values>
+ 
  
 <img src = 
-"https://user-images.githubusercontent.com/13596380/231319406-9ae3be38-18df-4db9-bb32-813db7ed1d43.png" alt="Colored First Phase Image" width="100" height="100" title="Image Title">
+"https://user-images.githubusercontent.com/13596380/231319406-9ae3be38-18df-4db9-bb32-813db7ed1d43.png" alt="Colored First Phase Image" width="70%" height="70%" title="Image Title">
 
 However at this point, it looks like only the initial-phase does anything.  ![image](https://user-images.githubusercontent.com/13596380/231481503-e51cf4a7-403d-4b20-b3bc-dcd789a508b1.png)
