@@ -134,7 +134,7 @@ Init | Mid | Late
 
 ![Tabulate_3_Phase_Combos_Summary_of_Misclasses](https://user-images.githubusercontent.com/13596380/231316234-047d6483-cfd2-4f11-bad6-34ed64688bdc.png)
  
--- ![image](https://user-images.githubusercontent.com/13596380/231319406-9ae3be38-18df-4db9-bb32-813db7ed1d43.png)
-
+<img src = 
+"https://user-images.githubusercontent.com/13596380/231319406-9ae3be38-18df-4db9-bb32-813db7ed1d43.png" alt="Colored First Phase Image" width="100" height="100" title="Image Title">
 
 However at this point, it looks like only the initial-phase does anything.  ![image](https://user-images.githubusercontent.com/13596380/231481503-e51cf4a7-403d-4b20-b3bc-dcd789a508b1.png)
