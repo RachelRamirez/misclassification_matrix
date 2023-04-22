@@ -150,7 +150,39 @@ Summary:
 After running 27 unique combinations of three lambda values across different values, it was clear that only the initial phase (first five epochs) seemed to be the most important factor.  The second and third phase didn't seem to have as large of an effect, if any.  Dr Cs guidance at this point was to explore more lambda-values in the first-five-epochs.  
 
 ----
-#### Fine-Tuning
+#### Realization there is probably a coding error
 
 However, after testing more combinations, I start to wonder if I have a coding error, because, nothing seems to change significantly after any epoch, once the model architecture is trained with a misclassification value, nothing seems to change no matter what the value is changed to.   To see this I loaded the results of the previous 27 unique combos and graphed the loss values.   I would think that if the weight-of-a-misclassification had a large impact, the overall loss-value would be larger overall for the epoch that changed.     According to the data, it doesn't appear like that was happening.   At epoch 5 and Epoch 10  I thought I would see some sort of jump in the loss value but i do not.  The picture below is from this [notebook](https://colab.research.google.com/github/RachelRamirez/misclassification_matrix/blob/main/Load_and_Analyze_Results_of_pkl_files.ipynb#scrollTo=8My0DZuBOBG1&uniqifier=1) . So i go back and rewrite my code so that it has more of a 'fine-tuning' format on 4/18/2023 which is just to say I try a differenet way of loading the initial model and continue training it.
 ![image](https://user-images.githubusercontent.com/13596380/232867477-644dbb36-f82a-4337-81dd-8eb97c4147e2.png)
+
+
+#### 
+New Code that works, in [new workbook]( https://colab.research.google.com/github/RachelRamirez/misclassification_matrix/blob/main/PreExperiment_PA_Shfl_40D_Lambda1_Lambda2_FineTuning.ipynb#scrollTo=2kR-Az-v1r6b&uniqifier=2)
+
+```
+for i in range(10):
+
+  cost_matrix[9,4] = 1
+  model = create_model(cost_matrix)
+
+  # I have to Recompile the created model with the New Cost Matrix (if it changes)
+  model.compile(loss=WeightedCategoricalCrossentropy(cost_matrix), optimizer=rms,  metrics='categorical_accuracy',)
+  
+  es_callback = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=patience, verbose=1, restore_best_weights = True)
+
+
+  X_train_shuffled = shuffle(X_train, random_state=42+i)  #PseudoRandom Seed based off for-loop
+  Y_train_shuffled = shuffle(Y_train, random_state=42+i)
+
+
+  model_history2 = model.fit(X_train_shuffled, Y_train_shuffled,          
+                              batch_size=batch_size, epochs=nb_epoch, verbose=1,
+                              validation_data=(X_val, Y_val), shuffle=True, use_multiprocessing=True, callbacks = [es_callback, cm_callback])
+
+  cm3 = return_cm(model)    #returns Confusion Matrix
+
+  model_history_all.append(model_history2)   #Add this history to the list
+  cm_all.append(cm3)                         #Add this confusion matrix to the list
+
+print(model_history_all)                     #Returns all for-loop HistoryObjects
+```
