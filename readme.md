@@ -186,3 +186,6 @@ for i in range(10):
 
 print(model_history_all)                     #Returns all for-loop HistoryObjects
 ```
+
+----------
+As of 5/1/2023 I've replaced RMS optimizer with SGD optimization.  The learning rate has to be pretty high 0.1, in order to execute within 100 epochs.  
