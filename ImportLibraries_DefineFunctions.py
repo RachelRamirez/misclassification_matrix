@@ -343,7 +343,9 @@ def plot_model_history_all(model_history, nb_epoch=None, cm3=None):
   #     The epoch at which the weights were restored.
 
   
-
+  fig = plt.figure(figsize=(20, 10))
+  fig, ax = plt.subplots(1,2)
+  
   tot_epochs = max(model_history.epoch)+1  #if the total epochs ran is 28, it'll show up as 27 in the epoch object so we must add 1
   # print("Total Epochs: ", tot_epochs)
 
