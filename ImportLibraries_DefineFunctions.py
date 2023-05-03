@@ -220,15 +220,15 @@ def plot_model_history(model_history, nb_epoch, cm3):
 
 
   #@title
-def create_model(): #Removed cost-matrix which is called up in the Compile Function and passed to the weighted-loss function
+def create_model(i=0): #Removed cost-matrix which is called up in the Compile Function and passed to the weighted-loss function
   model = Sequential()
-  model.add(Dense(40, input_shape=(784,), kernel_initializer=tf.keras.initializers.glorot_uniform(seed=42)))
+  model.add(Dense(40, input_shape=(784,), kernel_initializer=tf.keras.initializers.glorot_uniform(seed=42+i)))
   model.add(Activation('relu'))
   model.add(Dropout(0.2))
-  model.add(Dense(40, kernel_initializer=tf.keras.initializers.glorot_uniform(seed=42)))
+  model.add(Dense(40, kernel_initializer=tf.keras.initializers.glorot_uniform(seed=42+i)))
   model.add(Activation('relu'))
   model.add(Dropout(0.2))
-  model.add(Dense(10,kernel_initializer=tf.keras.initializers.glorot_uniform(seed=42)))
+  model.add(Dense(10,kernel_initializer=tf.keras.initializers.glorot_uniform(seed=42+i)))
   model.add(Activation('softmax'))
   return model  #I removed Compile
 
