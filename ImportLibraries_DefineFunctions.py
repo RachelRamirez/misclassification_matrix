@@ -328,9 +328,8 @@ def return_f1score(model):
   # return f1
 
 
-
 #@title: plot_model_history_all
-def plot_model_history_all(model_history, nb_epoch=None, cm3=None): 
+def plot_model_history_all(model_history, nb_epoch=None, cm3=None, label=None): 
   # Parameters
   # ----------
   # tot_epochs : int
@@ -342,43 +341,57 @@ def plot_model_history_all(model_history, nb_epoch=None, cm3=None):
   # restored_weights : int
   #     The epoch at which the weights were restored.
 
-  
-  fig = plt.figure(figsize=(20, 10))
-  fig, ax = plt.subplots(1,2)
-  
-  tot_epochs = max(model_history.epoch)+1  #if the total epochs ran is 28, it'll show up as 27 in the epoch object so we must add 1
-  # print("Total Epochs: ", tot_epochs)
 
+  tot_epochs = len(model_history['loss'])  #if the total epochs ran is 28, it'll show up as 27 in the epoch object so we must add 1
+  print("Total Epochs: ", tot_epochs)
+
+  #No Early Stop so not using this
   #if tot_epochs is the total number of epochs ran then early stop did not happen, and we need not minus patience
-  if tot_epochs == nb_epoch:
-    restored_weights = tot_epochs
-  else:
-    restored_weights  = tot_epochs-patience   #when using restore-best-weights and patience, it'll restore the best weights back
-  # print("Restored weights at ", restored_weights, "Patience used: ", patience)
+  # if tot_epochs == nb_epoch:
+  #   restored_weights = tot_epochs
+  # else:
+  #   restored_weights  = tot_epochs-patience   #when using restore-best-weights and patience, it'll restore the best weights back
+  # # print("Restored weights at ", restored_weights, "Patience used: ", patience)
 
-  ax[0].plot(range(1,tot_epochs+1), model_history.history['categorical_accuracy'], color='blue',           )
-  ax[0].plot(range(1,tot_epochs+1), model_history.history['val_categorical_accuracy'] , color='orange',    )
-  ax[0].scatter((restored_weights), model_history.history['val_categorical_accuracy'][restored_weights-1] , color='orange')
-  ax[0].scatter(restored_weights, model_history.history['categorical_accuracy'][restored_weights-1], color='blue')
-  ax[0].annotate(text=str(restored_weights),  xy=(restored_weights, model_history.history['val_categorical_accuracy'][restored_weights-1]),
-                  textcoords="offset points", xytext=(0,10), ha='center', color='black')
-  # ax[0].legend()
+  ax[0].plot(range(1,tot_epochs+1), model_history['categorical_accuracy'], label=label , linestyle="--"    )
+  ax[0].plot(range(1,tot_epochs+1), model_history['val_categorical_accuracy'] , label=label, linestyle=':' )
+  # ax[0].scatter((restored_weights), model_history['val_categorical_accuracy'][restored_weights-1] , color='orange', label="Val")
+  # ax[0].scatter(restored_weights, model_history['categorical_accuracy'][restored_weights-1], color='blue', label="Train")
+  # ax[0].annotate(text=str(restored_weights),  xy=(restored_weights, model_history['val_categorical_accuracy'][restored_weights-1]),
+  #                 textcoords="offset points", xytext=(0,10), ha='center', color='black')
+  ax[0].legend()
   ax[0].set_title('Training (Blue) and Validation (Orange) Accuracy', fontsize='8')
 
-  ax[1].plot(range(1,tot_epochs+1), model_history.history['loss'], color= 'blue',  )
-  ax[1].plot(range(1,tot_epochs+1), model_history.history['val_loss'], color='orange',  )
-  ax[1].scatter(restored_weights, model_history.history['loss'][restored_weights-1], color='blue')
-  ax[1].scatter((restored_weights), model_history.history['val_loss'][restored_weights-1] , color='orange')
-  ax[1].annotate(text=str(restored_weights),  xy=(restored_weights, model_history.history['val_loss'][restored_weights-1]),
-                  textcoords="offset points", xytext=(0,10), ha='center')
+
+
+  ax[1].plot(range(1,tot_epochs+1), model_history['loss'],  label=label , linestyle="--"  )
+  ax[1].plot(range(1,tot_epochs+1), model_history['val_loss'],  label=label, linestyle=':' )
+  # ax[1].scatter(restored_weights, model_history['loss'][restored_weights-1], color='blue')
+  # ax[1].scatter((restored_weights), model_history['val_loss'][restored_weights-1] , color='orange')
+  # ax[1].annotate(text=str(restored_weights),  xy=(restored_weights, model_history['val_loss'][restored_weights-1]),
+  #                 textcoords="offset points", xytext=(0,10), ha='center')
   # ax[1].legend()
   ax[1].set_title('Training (Blue) and Validation (Orange) Loss' , fontsize='8')
 
+
+  ax[2].plot(range(1,tot_epochs+1), model_history['9T_4P'],  label=label  )
+  # ax[2].plot(range(1,tot_epochs+1), model_history['9T_4P'], color='orange',  )
+  # ax[1].scatter(restored_weights, model_history['loss'][restored_weights-1], color='blue')
+  # ax[1].scatter((restored_weights), model_history['val_loss'][restored_weights-1] , color='orange')
+  # ax[1].annotate(text=str(restored_weights),  xy=(restored_weights, model_history['val_loss'][restored_weights-1]),
+  #                 textcoords="offset points", xytext=(0,10), ha='center')
+  # ax[2].legend()
+  ax[2].set_title('Validation Misclassifications of 9T_4P' , fontsize='8')
+
+
+  # ax[3].legend()
 
   plt.gcf().set_size_inches(10, 5)  # this works 
   # plt.gcf().suptitle(f"Lambda Value {lambda_val} for {nb_epoch} Epochs and Patience {patience} " )
 
   
+
+
 
 
 
